@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Identity;
 using Web.Services;
 using ApplicationCore.Services;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 
 namespace Microsoft.eShopWeb
 {
@@ -90,6 +91,8 @@ namespace Microsoft.eShopWeb
 
             services.AddMvc();
 
+            //Add CustomerCompilationService
+            services.AddSingleton<ICompilationService, CustomCompilationService>();
             _services = services;
         }
 
